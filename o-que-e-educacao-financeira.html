@@ -284,7 +284,7 @@ footer{background:#082A20;color:rgba(255,255,255,.72);padding-top:70px;}
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Educa\u00e7\u00e3o financeira \u00e9 s\u00f3 para quem ganha bem?","acceptedAnswer":{"@type":"Answer","text":"N\u00e3o. Ela \u00e9 ainda mais importante para quem tem or\u00e7amento apertado, porque cada decis\u00e3o tem um peso maior no resultado final do m\u00eas."}},{"@type":"Question","name":"Preciso saber matem\u00e1tica avan\u00e7ada para entender finan\u00e7as?","acceptedAnswer":{"@type":"Answer","text":"N\u00e3o. A maior parte da educa\u00e7\u00e3o financeira depende de organiza\u00e7\u00e3o e disciplina, n\u00e3o de c\u00e1lculos complexos."}},{"@type":"Question","name":"Qual \u00e9 o primeiro passo mais indicado?","acceptedAnswer":{"@type":"Answer","text":"Mapear com clareza todas as suas receitas e despesas atuais antes de pensar em investimentos ou metas de longo prazo."}}]}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"O que \u00e9 Educa\u00e7\u00e3o Financeira? Guia completo para iniciantes","author":{"@type":"Organization","name":"GreenWealth"},"datePublished":"2026-01-12","publisher":{"@type":"Organization","name":"GreenWealth"}}
+{"@context":"https://schema.org","@type":"Article","headline":"O que \u00e9 Educa\u00e7\u00e3o Financeira? Guia completo para iniciantes","image":"https://greenwealthportal.duckdns.org/og-image.jpg","author":{"@type":"Organization","name":"GreenWealth"},"datePublished":"2026-01-12","publisher":{"@type":"Organization","name":"GreenWealth"}}
 </script>
 </head>
 <body>
@@ -654,8 +654,12 @@ if(burger && menu){
   burger.addEventListener('click', () => {
     const open = menu.classList.toggle('open');
     burger.setAttribute('aria-expanded', open);
+    document.body.style.overflow = open ? 'hidden' : '';
   });
-  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    menu.classList.remove('open');
+    document.body.style.overflow = '';
+  }));
 }
 const revealEls = document.querySelectorAll('.reveal');
 if(revealEls.length){

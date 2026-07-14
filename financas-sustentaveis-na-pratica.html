@@ -284,7 +284,7 @@ footer{background:#082A20;color:rgba(255,255,255,.72);padding-top:70px;}
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Finan\u00e7as sustent\u00e1veis custam mais caro?","acceptedAnswer":{"@type":"Answer","text":"Nem sempre. Muitas escolhas sustent\u00e1veis, como consumo consciente e menor desperd\u00edcio, geram economia no m\u00e9dio prazo."}},{"@type":"Question","name":"Preciso ser um investidor experiente para investir de forma sustent\u00e1vel?","acceptedAnswer":{"@type":"Answer","text":"N\u00e3o. Hoje existem fundos e plataformas acess\u00edveis a investidores iniciantes com foco em crit\u00e9rios ambientais e sociais."}},{"@type":"Question","name":"Qual \u00e9 o primeiro passo para aplicar finan\u00e7as sustent\u00e1veis?","acceptedAnswer":{"@type":"Answer","text":"Revisar seus h\u00e1bitos de consumo atuais \u00e9 geralmente o ponto de partida mais simples e com resultado mais r\u00e1pido."}}]}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"Finan\u00e7as Sustent\u00e1veis na pr\u00e1tica: como aplicar no seu dia a dia","author":{"@type":"Organization","name":"GreenWealth"},"datePublished":"2026-02-09","publisher":{"@type":"Organization","name":"GreenWealth"}}
+{"@context":"https://schema.org","@type":"Article","headline":"Finan\u00e7as Sustent\u00e1veis na pr\u00e1tica: como aplicar no seu dia a dia","image":"https://greenwealthportal.duckdns.org/og-image.jpg","author":{"@type":"Organization","name":"GreenWealth"},"datePublished":"2026-02-09","publisher":{"@type":"Organization","name":"GreenWealth"}}
 </script>
 </head>
 <body>
@@ -650,8 +650,12 @@ if(burger && menu){
   burger.addEventListener('click', () => {
     const open = menu.classList.toggle('open');
     burger.setAttribute('aria-expanded', open);
+    document.body.style.overflow = open ? 'hidden' : '';
   });
-  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    menu.classList.remove('open');
+    document.body.style.overflow = '';
+  }));
 }
 const revealEls = document.querySelectorAll('.reveal');
 if(revealEls.length){

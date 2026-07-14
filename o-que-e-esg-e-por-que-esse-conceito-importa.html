@@ -284,7 +284,7 @@ footer{background:#082A20;color:rgba(255,255,255,.72);padding-top:70px;}
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"ESG \u00e9 a mesma coisa que sustentabilidade?","acceptedAnswer":{"@type":"Answer","text":"Sustentabilidade \u00e9 um conceito mais amplo. ESG \u00e9 o framework usado para medir e comparar pr\u00e1ticas de sustentabilidade e governan\u00e7a entre empresas."}},{"@type":"Question","name":"Investir em ESG rende mais que investimentos tradicionais?","acceptedAnswer":{"@type":"Answer","text":"N\u00e3o necessariamente. O retorno depende de cada ativo \u2014 ESG \u00e9 um crit\u00e9rio de an\u00e1lise de risco e impacto, n\u00e3o uma garantia de performance."}},{"@type":"Question","name":"Como saber se um fundo \u00e9 realmente ESG?","acceptedAnswer":{"@type":"Answer","text":"Verifique o regulamento do fundo, a metodologia de sele\u00e7\u00e3o de ativos e se existe um relat\u00f3rio peri\u00f3dico de impacto dispon\u00edvel para os investidores."}}]}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"O que \u00e9 ESG e por que esse conceito importa?","author":{"@type":"Organization","name":"GreenWealth"},"datePublished":"2026-02-02","publisher":{"@type":"Organization","name":"GreenWealth"}}
+{"@context":"https://schema.org","@type":"Article","headline":"O que \u00e9 ESG e por que esse conceito importa?","image":"https://greenwealthportal.duckdns.org/og-image.jpg","author":{"@type":"Organization","name":"GreenWealth"},"datePublished":"2026-02-02","publisher":{"@type":"Organization","name":"GreenWealth"}}
 </script>
 </head>
 <body>
@@ -652,8 +652,12 @@ if(burger && menu){
   burger.addEventListener('click', () => {
     const open = menu.classList.toggle('open');
     burger.setAttribute('aria-expanded', open);
+    document.body.style.overflow = open ? 'hidden' : '';
   });
-  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    menu.classList.remove('open');
+    document.body.style.overflow = '';
+  }));
 }
 const revealEls = document.querySelectorAll('.reveal');
 if(revealEls.length){

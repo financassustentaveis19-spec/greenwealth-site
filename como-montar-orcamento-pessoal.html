@@ -284,7 +284,7 @@ footer{background:#082A20;color:rgba(255,255,255,.72);padding-top:70px;}
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Preciso usar um aplicativo espec\u00edfico para montar meu or\u00e7amento?","acceptedAnswer":{"@type":"Answer","text":"N\u00e3o \u00e9 obrigat\u00f3rio. Uma planilha ou at\u00e9 papel funcionam bem \u2014 o essencial \u00e9 manter o h\u00e1bito de registrar e revisar."}},{"@type":"Question","name":"O m\u00e9todo 50-30-20 serve para qualquer faixa de renda?","acceptedAnswer":{"@type":"Answer","text":"Ele \u00e9 um ponto de partida flex\u00edvel. Rendas menores costumam precisar de uma propor\u00e7\u00e3o maior para despesas essenciais."}},{"@type":"Question","name":"O que fazer quando as despesas fixas j\u00e1 ultrapassam metade da renda?","acceptedAnswer":{"@type":"Answer","text":"Nesse caso, o foco inicial deve ser renegociar ou reduzir despesas fixas, j\u00e1 que elas t\u00eam o maior impacto estrutural no or\u00e7amento."}}]}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"Como montar um or\u00e7amento pessoal (passo a passo)","author":{"@type":"Organization","name":"GreenWealth"},"datePublished":"2026-01-19","publisher":{"@type":"Organization","name":"GreenWealth"}}
+{"@context":"https://schema.org","@type":"Article","headline":"Como montar um or\u00e7amento pessoal (passo a passo)","image":"https://greenwealthportal.duckdns.org/og-image.jpg","author":{"@type":"Organization","name":"GreenWealth"},"datePublished":"2026-01-19","publisher":{"@type":"Organization","name":"GreenWealth"}}
 </script>
 </head>
 <body>
@@ -650,8 +650,12 @@ if(burger && menu){
   burger.addEventListener('click', () => {
     const open = menu.classList.toggle('open');
     burger.setAttribute('aria-expanded', open);
+    document.body.style.overflow = open ? 'hidden' : '';
   });
-  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    menu.classList.remove('open');
+    document.body.style.overflow = '';
+  }));
 }
 const revealEls = document.querySelectorAll('.reveal');
 if(revealEls.length){

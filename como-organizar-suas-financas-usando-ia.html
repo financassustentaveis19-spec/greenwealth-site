@@ -284,7 +284,7 @@ footer{background:#082A20;color:rgba(255,255,255,.72);padding-top:70px;}
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Quais dados eu preciso fornecer para usar ferramentas de IA financeira?","acceptedAnswer":{"@type":"Answer","text":"Normalmente, acesso de leitura \u00e0s contas banc\u00e1rias e cart\u00f5es, para que a ferramenta consiga importar e categorizar as transa\u00e7\u00f5es automaticamente."}},{"@type":"Question","name":"A IA consegue prever exatamente meus gastos futuros?","acceptedAnswer":{"@type":"Answer","text":"Ela consegue estimar tend\u00eancias com base no hist\u00f3rico, mas n\u00e3o prev\u00ea com exatid\u00e3o eventos novos ou fora do padr\u00e3o."}},{"@type":"Question","name":"Vale a pena pagar por uma ferramenta de IA financeira?","acceptedAnswer":{"@type":"Answer","text":"Depende do quanto os recursos avan\u00e7ados de automa\u00e7\u00e3o, simula\u00e7\u00e3o e alertas realmente v\u00e3o economizar seu tempo e evitar erros no dia a dia."}}]}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"Como organizar suas finan\u00e7as usando Intelig\u00eancia Artificial","author":{"@type":"Organization","name":"GreenWealth"},"datePublished":"2026-03-16","publisher":{"@type":"Organization","name":"GreenWealth"}}
+{"@context":"https://schema.org","@type":"Article","headline":"Como organizar suas finan\u00e7as usando Intelig\u00eancia Artificial","image":"https://greenwealthportal.duckdns.org/og-image.jpg","author":{"@type":"Organization","name":"GreenWealth"},"datePublished":"2026-03-16","publisher":{"@type":"Organization","name":"GreenWealth"}}
 </script>
 </head>
 <body>
@@ -653,8 +653,12 @@ if(burger && menu){
   burger.addEventListener('click', () => {
     const open = menu.classList.toggle('open');
     burger.setAttribute('aria-expanded', open);
+    document.body.style.overflow = open ? 'hidden' : '';
   });
-  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    menu.classList.remove('open');
+    document.body.style.overflow = '';
+  }));
 }
 const revealEls = document.querySelectorAll('.reveal');
 if(revealEls.length){

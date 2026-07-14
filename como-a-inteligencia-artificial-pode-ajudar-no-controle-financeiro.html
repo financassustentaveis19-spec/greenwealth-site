@@ -284,7 +284,7 @@ footer{background:#082A20;color:rgba(255,255,255,.72);padding-top:70px;}
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Ferramentas de IA financeira s\u00e3o seguras?","acceptedAnswer":{"@type":"Answer","text":"A maioria das ferramentas confi\u00e1veis usa criptografia e acesso somente leitura aos dados banc\u00e1rios, mas \u00e9 importante sempre verificar a reputa\u00e7\u00e3o e as pol\u00edticas de seguran\u00e7a antes de conectar suas contas."}},{"@type":"Question","name":"A IA pode substituir um planejador financeiro?","acceptedAnswer":{"@type":"Answer","text":"Ela pode apoiar decis\u00f5es, mas n\u00e3o substitui a an\u00e1lise humana em situa\u00e7\u00f5es mais complexas ou que exigem contexto pessoal aprofundado."}},{"@type":"Question","name":"Preciso pagar para usar ferramentas de IA financeira?","acceptedAnswer":{"@type":"Answer","text":"Existem op\u00e7\u00f5es gratuitas com funcionalidades b\u00e1sicas e op\u00e7\u00f5es pagas com recursos mais avan\u00e7ados de automa\u00e7\u00e3o e simula\u00e7\u00e3o."}}]}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"Como a Intelig\u00eancia Artificial pode ajudar no controle financeiro","author":{"@type":"Organization","name":"GreenWealth"},"datePublished":"2026-02-16","publisher":{"@type":"Organization","name":"GreenWealth"}}
+{"@context":"https://schema.org","@type":"Article","headline":"Como a Intelig\u00eancia Artificial pode ajudar no controle financeiro","image":"https://greenwealthportal.duckdns.org/og-image.jpg","author":{"@type":"Organization","name":"GreenWealth"},"datePublished":"2026-02-16","publisher":{"@type":"Organization","name":"GreenWealth"}}
 </script>
 </head>
 <body>
@@ -652,8 +652,12 @@ if(burger && menu){
   burger.addEventListener('click', () => {
     const open = menu.classList.toggle('open');
     burger.setAttribute('aria-expanded', open);
+    document.body.style.overflow = open ? 'hidden' : '';
   });
-  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    menu.classList.remove('open');
+    document.body.style.overflow = '';
+  }));
 }
 const revealEls = document.querySelectorAll('.reveal');
 if(revealEls.length){
