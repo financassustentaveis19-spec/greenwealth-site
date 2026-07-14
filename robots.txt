@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://greenwealth.com.br/sitemap.xml
+Sitemap: https://greenwealthportal.duckdns.org/sitemap.xml
